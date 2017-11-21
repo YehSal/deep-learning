@@ -26,3 +26,7 @@ onehotencoder = OneHotEncoder(categorical_features = [0])
 X = onehotencoder.fit_transform(X).toarray()
 labelencoder_Y = LabelEncoder() # DV is already recognized as categorical
 y = labelencoder_Y.fit_transform(y)
+
+# Split data in training set and test set
+from sklearn.cross_validation import train_test_split
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, random_state = 0)
